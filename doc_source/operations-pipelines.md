@@ -1,6 +1,6 @@
 # Pipeline Operations<a name="operations-pipelines"></a>
 
-
+**Topics**
 + [Create Pipeline](create-pipeline.md)
 + [List Pipelines](list-pipelines.md)
 + [Read Pipeline](get-pipeline.md)

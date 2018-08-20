@@ -16,7 +16,7 @@ The **Sizing Policy** that you choose affects the scaling that Elastic Transcode
 
 The following tables show how the **Sizing Policy**, **Padding Policy**, **Max Height**, and **Max Width** interact to change the output image\.
 
-
+**Topics**
 + [Fit](#fit-ratio)
 + [Fill](#fill-ratio)
 + [Stretch](#stretch-ratio)

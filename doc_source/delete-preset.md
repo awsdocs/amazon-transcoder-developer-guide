@@ -1,6 +1,6 @@
 # Delete Preset<a name="delete-preset"></a>
 
-
+**Topics**
 + [Description](#delete-preset-description)
 + [Requests](#delete-preset-requests)
 + [Responses](#delete-preset-responses)

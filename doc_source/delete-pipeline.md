@@ -1,6 +1,6 @@
 # Delete Pipeline<a name="delete-pipeline"></a>
 
-
+**Topics**
 + [Description](#delete-pipeline-description)
 + [Requests](#delete-pipeline-requests)
 + [Responses](#delete-pipeline-responses)

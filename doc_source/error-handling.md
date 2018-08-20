@@ -1,23 +1,18 @@
 # Handling Errors in Elastic Transcoder<a name="error-handling"></a>
 
-
+**Topics**
 + [API Error Codes \(Client and Server Errors\)](#api-error-codes)
 + [Errors During Job Processing](#job-processing-errors)
 + [Catching Errors](#catching-errors)
 + [Error Retries and Exponential Backoff](#api-retries)
 
 When you send requests to and get responses from the Elastic Transcoder API, you might encounter two types of API errors:
-
 + **Client errors:** Client errors are indicated by a 4xx HTTP response code\. Client errors indicate that Elastic Transcoder found a problem with the client request, such as an authentication failure or missing required parameters\. Fix the issue in the client application before submitting the request again\.
-
 + **Server errors:** Server errors are indicated by a 5xx HTTP response code, and need to be resolved by Amazon\. You can resubmit/retry the request until it succeeds\.
 
 For each API error, Elastic Transcoder returns the following values: 
-
 + A status code, for example, `400`
-
 + An error code, for example, `ValidationException`
-
 + An error message, for example, `Supplied AttributeValue is empty, must contain exactly one of the supported datatypes`
 
 For a list of error codes that Elastic Transcoder returns for client and server errors, see [API Error Codes \(Client and Server Errors\)](#api-error-codes)\.
@@ -31,9 +26,7 @@ HTTP status codes indicate whether an operation is successful or not\.
 A response code of `200` indicates the operation was successful\. Other error codes indicate either a client error \(4xx\) or a server error \(5xx\)\.
 
 The following table lists the errors returned by Elastic Transcoder\. Some errors are resolved if you simply retry the same request\. The table indicates which errors are likely to be resolved with successive retries\. If the value of the Retry column is:
-
 + **Yes:** Submit the same request again\.
-
 + **No:** Fix the problem on the client side before submitting a new request\. 
 
 For more information about retrying requests, see [Error Retries and Exponential Backoff](#api-retries)\.
@@ -74,9 +67,7 @@ Date: Mon, 26 Nov 2012 20:27:25 GMT
 ## Errors During Job Processing<a name="job-processing-errors"></a>
 
 When Elastic Transcoder encounters an error while processing your job, it reports the error in two ways:
-
 + **Job Status and Output Status:** Elastic Transcoder sets the `Job:Status` object and the `Outputs:Status` object for the failed output to `Error`\. In addition, Elastic Transcoder sets the `Outputs:StatusDetail` JSON object for the failed output to a value that explains the failure\.
-
 + **SNS Notification:** If you configured the pipeline to send an SNS notification when Elastic Transcoder encounters an error during processing, Elastic Transcoder includes a JSON object in the notification in the following format:
 
   ```

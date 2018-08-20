@@ -1,15 +1,10 @@
 # AWS SDK Sample Code<a name="sample-code"></a>
 
 This section contains sample code that shows how to use the AWS SDKs for Java, Ruby, PHP, and Python to perform the following operations:
-
 + Create an HLS playlist in Amazon Elastic Transcoder
-
 + Create a job in Elastic Transcoder
-
 + Poll an Amazon Simple Queue Service \(Amazon SQS\) queue
-
 + Parse a notification from the Amazon Simple Notification Service \(Amazon SNS\)
-
 + Handle the notification from Amazon SNS
 
 These operations represent Elastic Transcoder best practices\. Polling an Amazon SQS queue allows for long polling, which scales more efficiently than regular polling, and setting up Amazon SNS notifications allows Elastic Transcoder to deliver messages to the Amazon SQS queue\.
@@ -18,7 +13,7 @@ The sample code shows how to transcode for HLS \(HTTP Live Streaming\) and how t
 
 If you are using a language for which an SDK exists, we recommend that you use the SDK rather than try to work your way through the APIs\. You'll find that using the SDKs makes authentication simpler, integrates easily with your development environment, and provides easy access to related commands\.
 
-
+**Topics**
 + [Background for AWS SDK Sample Code](#sample-intro)
 + [Setting Up Your Environment](#env-setup)
 + [Java Samples](#java-sample)
@@ -39,13 +34,9 @@ If you poll the Elastic Transcoder's `ReadJob` API to track job status, you need
 Each Elastic Transcoder notification is sent as a JSON object in the `Message` field\. Because notifications are themselves sent in JSON format, you need to escape the Elastic Transcoder notification in the message string\. For information about the format and content of Elastic Transcoder notifications, see the [Notifications](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/notifications.html) section\.
 
 When you are writing custom code to handle job status notifications, follow these best practices:
-
 + **Handlers must be idempotent\.** It is possible that a notification will be delivered more than once\.
-
 + **Handlers must support out of order notifications\.** It is possible that notifications will be delivered out of order\.
-
 + **Handlers must be able to process a notification for any job\.** There is no way to guarantee that a notification for a particular job will be delivered to a particular worker\.
-
 + **Handlers should be short operations\.** All of the messages must be handled and deleted before the visibility timeout\. If the visibility timeout is 15 seconds and a maximum of 5 messages will be returned from Amazon SQS, each message must be handled and deleted from the queue in less than 3 seconds\. If handling takes longer than this, unprocessed messages will time out and be delivered to a different worker\.
 
 For Java, Python, and Ruby, we recommend that you consume notifications by polling an Amazon SQS queue that is subscribed to your notification topic\. Since Amazon SQS uses a long\-poll mechanism, polling the Amazon SQS queue gives a scalable method for consuming job notifications\. Amazon SQS also simplifies availability and scaling for when hosts fail or during times of high load, and generally requires no special ACL setup\.
@@ -56,7 +47,7 @@ For PHP running in Apache, we recommend that you subscribe your endpoint directl
 
 To run the sample code, you need to have an AWS environment set up\. This section walks you through the setup process, and shows how to create the AWS resources that Elastic Transcoder needs in order to work optimally\.
 
-
+**Topics**
 + [Setting up your Java environment](#env-java)
 + [Setting up your Ruby environment](#env-ruby)
 + [Setting up your PHP environment](#env-php)
@@ -66,7 +57,7 @@ To run the sample code, you need to have an AWS environment set up\. This sectio
 
 This section walks you through setting up your Java environment\.
 
-
+**Topics**
 + [Setting up an AWS account](#java-sign-up)
 + [Setting up the AWS SDK for Java](#java-sdk)
 + [Creating Amazon S3 input and output buckets](#java-s3)
@@ -78,9 +69,7 @@ This section walks you through setting up your Java environment\.
 + [Modifying the Amazon S3 bucket policy](#java-s3-policy)
 
 The sample code makes two major assumptions:
-
 + Samples are written to work with Java version 1\.6 or higher\.
-
 + Samples are run using Eclipse with the AWS Toolkit for Eclipse\.
 
 #### Setting up an AWS account<a name="java-sign-up"></a>
@@ -89,7 +78,7 @@ The sample code makes two major assumptions:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -97,12 +86,9 @@ This might be unavailable in your browser if you previously signed into the AWS 
 
 #### Setting up the AWS SDK for Java<a name="java-sdk"></a>
 
-These samples assume you are using the AWS Toolkit for Eclipse\. You need both the [AWS SDK for Java](http://aws.amazon.com/sdkforjava/) and the following [Jackson JSON processor JAR files](http://wiki.fasterxml.com/JacksonDownload) :
-
+These samples assume you are using the AWS Toolkit for Eclipse\. You need both the [AWS SDK for Java](http://aws.amazon.com/sdkforjava/) and the following Jackson JSON processor JAR files:
 + Jackson Core
-
 + Jackson Databind
-
 + Jackson Annotations
 
 The Jackson JSON processor handles job status notifications\.
@@ -271,7 +257,7 @@ Skip to the [Java Samples](#java-sample)\.
 
 This section walks you through setting up your Ruby environment\.
 
-
+**Topics**
 + [Setting up an AWS account](#ruby-sign-up)
 + [Setting up the AWS SDK for Ruby](#ruby-sdk)
 + [Creating Amazon S3 input and output buckets](#ruby-s3)
@@ -283,7 +269,6 @@ This section walks you through setting up your Ruby environment\.
 + [Modifying the Amazon S3 bucket policy](#ruby-s3-policy)
 
 The sample code makes one major assumption:
-
 + Samples are written to be compatible with Ruby version 1\.9\.
 
 #### Setting up an AWS account<a name="ruby-sign-up"></a>
@@ -292,7 +277,7 @@ The sample code makes one major assumption:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -434,7 +419,7 @@ Skip to the [Ruby Samples](#ruby-sample)\.
 
 This section walks you through setting up your PHP environment\.
 
-
+**Topics**
 + [Setting up an AWS account](#php-sign-up)
 + [Installing the sample code](#php-install)
 + [Setting up the AWS SDK for PHP](#php-sdk)
@@ -446,11 +431,8 @@ This section walks you through setting up your PHP environment\.
 + [Modifying the Amazon S3 bucket policy](#php-s3-policy)
 
 The sample code makes three major assumptions:
-
 + PHP samples are run inside an Apache server\.
-
 + Apache server must be able to take input from the internet to receive Amazon SNS notifications\.
-
 + Samples are written to work with PHP version 5\.4 or higher\.
 
 #### Setting up an AWS account<a name="php-sign-up"></a>
@@ -459,7 +441,7 @@ The sample code makes three major assumptions:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -468,19 +450,12 @@ This might be unavailable in your browser if you previously signed into the AWS 
 #### Installing the sample code<a name="php-install"></a>
 
 To use the PHP sample code, you must first download and install it\. 
-
 + Download the sample code:
-
   + [HLS Sample Code](https://s3.amazonaws.com/codesamples/ets/latest/phphls.zip)\.
-
   + [Notification Sample Code](https://s3.amazonaws.com/codesamples/ets/latest/phpnotification.zip)\.
-
 + Unzip the sample code\.
-
 + Place the code under your Apache server's DocumentRoot\.
-
 + Remove the downloaded sample code \.zip file\. 
-
 + Update the path to your AWS SDK Installation\.
 
 **Note**  
@@ -612,7 +587,7 @@ Skip to the [PHP Samples](#php-sample)\.
 
 This section walks you through setting up your Python environment\.
 
-
+**Topics**
 + [Setting up an AWS account](#python-sign-up)
 + [Setting up the AWS SDK for Python](#python-sdk)
 + [Creating Amazon S3 input and output buckets](#python-s3)
@@ -624,7 +599,6 @@ This section walks you through setting up your Python environment\.
 + [Modifying the Amazon S3 bucket policy](#python-s3-policy)
 
 It makes one major assumption:
-
 + Samples are written to be compatible with Python version 2\.7\.
 
 #### Setting up an AWS account<a name="python-sign-up"></a>
@@ -633,7 +607,7 @@ It makes one major assumption:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -774,14 +748,12 @@ Skip to the [Python Samples](#python-sample)\.
 ## Java Samples<a name="java-sample"></a>
 
 All Java samples make two assumptions: 
-
 + Samples are written to work with Java version 1\.6 or higher\.
-
 + Samples are run using Eclipse with the AWS Toolkit for Eclipse\.
 
 ### HLS Samples<a name="java-hls"></a>
 
-
+**Topics**
 + [Java HLS Sample Download](#java-hls-link)
 + [Sample Code Pieces](#java-hls-list)
 + [Tasks](#java-hls-tasklist)
@@ -795,7 +767,6 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="java-hls-list"></a>
 
 The Java code sample includes: 
-
 + The class `HlsJobCreationSample`
 
 #### Tasks<a name="java-hls-tasklist"></a>
@@ -814,7 +785,7 @@ To run the sample, follow these steps:
 
 ### Notification Samples<a name="java-notifications"></a>
 
-
+**Topics**
 + [Example of Notification Syntax](#java-notification-example)
 + [Java Notification Sample Download](#java-link)
 + [Sample Code Pieces](#java-list)
@@ -857,15 +828,10 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="java-list"></a>
 
 The Java code sample includes: 
-
 + The class `Notification`: To consume notifications from Java, we use the Jackson JSON library to deserialize job status notifications into POJOs\. The `Notification` class models the message we get back from the Amazon SQS queue\.
-
 + The class `JobStatusNotification`: The `JobStatusNotification` class models an Elastic Transcoder notification\.
-
 + The class `SqsQueueNotificationWorker`: The `SqsQueueNotificationWorker` class can be started in a separate thread to poll Amazon SQS and handle job status notifications\. This class receives messages, calls all registered handlers for each notification received, and deletes the message from the queue\.
-
 + The interface `JobStatusNotificationHandler`: The `JobStatusNotificationHandler` interface can be implemented to allow custom handling for notifications\. 
-
 + The class `JobStatusNotificationsSample`: The `JobStatusNotificationsSample` class creates a job and waits for it to complete\. When the job goes into a terminal state, the queue worker shuts down and the application exits\.
 
 #### Tasks<a name="java-tasklist"></a>
@@ -887,12 +853,11 @@ To run the sample, follow these steps:
 ## Ruby Samples<a name="ruby-sample"></a>
 
 All Ruby samples make one major assumption: 
-
 + Samples are written to be compatible with Ruby version 1\.9\.
 
 ### HLS Samples<a name="ruby-hls"></a>
 
-
+**Topics**
 + [Ruby HLS Sample Download](#ruby-hls-link)
 + [Sample Code Pieces](#ruby-hls-list)
 + [Tasks](#ruby-hls-tasklist)
@@ -906,7 +871,6 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="ruby-hls-list"></a>
 
 The Ruby sample code includes: 
-
 + The `HlsJobCreationSample.rb` file
 
 #### Tasks<a name="ruby-hls-tasklist"></a>
@@ -929,7 +893,7 @@ $ruby HlsJobCreationSample.rb
 
 ### Notification Samples<a name="ruby-notifications"></a>
 
-
+**Topics**
 + [Example of Notification Syntax](#ruby-notification-example)
 + [Ruby Notification Sample Download](#ruby-link)
 + [Sample Code Pieces](#ruby-list)
@@ -972,9 +936,7 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="ruby-list"></a>
 
 The Ruby sample code includes: 
-
 + The class `SqsQueueNotificationWorker`: The `SqsQueueNotificationWorker` class polls Amazon SQS for notifications, calls all registered handlers for each notification, and deletes the message from the queue\. Note that the worker runs in a separate thread\. If the Ruby implementation used has "green" threads, then only a single thread runs at a time \(no true multiprocessing\)\.
-
 + The script `JobStatusNotificationsSample.rb`: This script creates an Elastic Transcoder job, starts an Amazon SQS worker and waits for the job to complete\. The provided handler tells the Amazon SQS worker to stop when the created job's processing is complete\. Handling notifications is done by calling the add\_handlers method and providing a Proc or lambda as a handler that takes a single argument\. For each notification received, all registered handlers are called with the notification provided as the input argument to the handler\.
 
 #### Tasks<a name="ruby-tasklist"></a>
@@ -998,16 +960,13 @@ $ruby JobStatusNotificationsSample.rb
 ## PHP Samples<a name="php-sample"></a>
 
 All PHP samples make three major assumptions:
-
 + PHP samples are run inside an Apache server\.
-
 + Apache server must be able to take input from the Internet to receive Amazon SNS notifications\.
-
 + Samples are written to work with PHP version 5\.4 or higher\.
 
 ### HLS Samples<a name="php-hls"></a>
 
-
+**Topics**
 + [PHP HLS Sample Download](#php-hls-link)
 + [Sample Code Pieces](#php-hls-list)
 + [Tasks](#php-hls-tasklist)
@@ -1021,7 +980,6 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="php-hls-list"></a>
 
 The PHP sample code includes: 
-
 + The `HlsJobCreationSample.php` file
 
 #### Tasks<a name="php-hls-tasklist"></a>
@@ -1038,7 +996,7 @@ To run the sample, follow these steps:
 
 ### Notification Samples<a name="php-notifications"></a>
 
-
+**Topics**
 + [Example of Notification Syntax](#php-notification-example)
 + [PHP Notification Sample Download](#php-link)
 + [Sample Code Pieces](#php-list)
@@ -1081,9 +1039,7 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="php-list"></a>
 
 The PHP sample code includes:
-
 + The file `JobStatusNotificationsSampleNotificationHandler.php`: When a notification is POSTed to your server, the notification handler writes the status back to a file under /tmp/<job\-id>\.
-
 + The file `JobStatusNotificationsSample.php`: Once the notification handler writes the status back to a file under /tmp/<job\-id>, `JobStatusNotificationsSample.php` loads the /tmp/<job\-id> status file specified by the Id in the query string given to it\.
 
 #### Tasks<a name="php-tasklist"></a>
@@ -1103,12 +1059,11 @@ To run the sample, follow these steps:
 ## Python Samples<a name="python-sample"></a>
 
 All Python samples make one major assumption: 
-
 + Samples are written to be compatible with Python version 2\.7\.
 
 ### HLS Samples<a name="python-hls"></a>
 
-
+**Topics**
 + [Python HLS Sample Download](#python-hls-link)
 + [Sample Code Pieces](#python-hls-list)
 + [Tasks](#python-hls-tasklist)
@@ -1122,7 +1077,6 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="python-hls-list"></a>
 
 The Python sample code includes: 
-
 + The `HlsJobCreationSample.py` file
 
 #### Tasks<a name="python-hls-tasklist"></a>
@@ -1145,7 +1099,7 @@ $python HlsJobCreationSample.py
 
 ### Notification Samples<a name="python-notifications"></a>
 
-
+**Topics**
 + [Example of Notification Syntax](#python-notification-example)
 + [Python Notification Sample Download](#python-link)
 + [Sample Code Pieces](#python-list)
@@ -1188,9 +1142,7 @@ You can download the sample code [here](https://s3.amazonaws.com/codesamples/ets
 #### Sample Code Pieces<a name="python-list"></a>
 
 The Python sample code includes:
-
 + The class `SqsQueueNotificationWorker.py`: The `SqsQueueNotificationWorker` class polls Amazon SQS and handles notifications in a separate process\. This allows for true multiprocessing in Python\. This class receives messages, calls all registered handlers for each notification received, and deletes the message from the queue\. This class also includes the definition for the `JobStatusNotificationHandler` class, which is provided to give a framework for handling Elastic Transcoder notifications\. This class can be extended and the handle method overwritten to provide custom job handling\. Note that this does not follow Pythons standards of duck typing, but does give a formal definition of handlers for the purposes of this sample\. 
-
 + The script `JobStatusNotificationSample.py`: The `JobStatusNotificationSample.py` script creates a job in Elastic Transcoder and waits for it to complete\. When the job completes, it stops the queue polling process and exits\. Cross\-process synchronization using the multiprocessing value object is necessary, because the handler runs in a separate process from the queue it polls\.
 
 #### Tasks<a name="python-tasklist"></a>

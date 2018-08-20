@@ -1,6 +1,6 @@
 # Step 2: Create an Amazon S3 Bucket or Two, and Upload a Media File<a name="gs-2-create-s3-buckets"></a>
 
-Create an Amazon S3 bucket for the files that you want to transcode \(the input bucket\) and another bucket for the transcoded files \(the output bucket\)\. You can also use the same bucket for the input bucket and the output bucket\.
+Create an Amazon S3 bucket for the files that you want to transcode \(the input bucket\) and another bucket for the transcoded files \(the output bucket\)\. You can also use the same bucket for the input bucket and the output bucket\.<a name="gs-2-create-s3-buckets-procedure"></a>
 
 **To create Amazon S3 buckets and upload a media file**
 

@@ -1,6 +1,6 @@
 # Update Pipeline Status<a name="update-pipeline-status"></a>
 
-
+**Topics**
 + [Description](#update-pipeline-status-description)
 + [Requests](#update-pipeline-status-requests)
 + [Responses](#update-pipeline-status-responses)
@@ -50,9 +50,7 @@ The JSON string in the request body contains the following object\.
 
 **Status**  
 The new status of the pipeline:  
-
 + `Active`: Enable the pipeline, so it starts processing jobs\.
-
 + `Paused`: Disable the pipeline, so it stops processing jobs\.
 
 ## Responses<a name="update-pipeline-status-responses"></a>

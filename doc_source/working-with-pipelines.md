@@ -1,6 +1,6 @@
 # Working with Pipelines<a name="working-with-pipelines"></a>
 
-
+**Topics**
 + [Creating a Pipeline in Elastic Transcoder](creating-pipelines.md)
 + [Pausing and Reactivating Pipelines in Elastic Transcoder](updating-pipeline-status.md)
 + [Updating Pipeline Notifications in Elastic Transcoder](updating-pipeline-notifications.md)

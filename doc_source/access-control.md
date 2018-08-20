@@ -2,7 +2,7 @@
 
 Elastic Transcoder lets you use AWS Identity and Access Management \(IAM\) to control what users can do with Elastic Transcoder, and to control Elastic Transcoder's access to other AWS services that Elastic Transcoder requires\. You control access using IAM policies, which are a collection of permissions that can be associated with a user, an IAM group, or a role\. 
 
-
+**Topics**
 + [Controlling User Access to Elastic Transcoder](#access-control-users)
 + [Service Roles for Elastic Transcoder Pipelines](#access-control-roles)
 
@@ -145,13 +145,9 @@ arn:aws:elastictranscoder:region:account:resource/ID
 ```
 
 Replace the *region*, *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
-
 + *region*: The name of the region\. A list of regions is available [here](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region)\. To indicate all regions, use a wildcard \(\*\)\. You must specify a value\.
-
 + *account*: The ID of the AWS account\. You must specify a value\.
-
 + *resource*: The type of Elastic Transcoder resource; `preset`, `pipeline`, or `job`\.
-
 + *ID*: The ID of the specific preset, pipeline, or job, or \* to indicate all resources of the specified type that are associated with the current AWS account\.
 
 For example, the following ARN specifies all preset resources in the `us-east-2` region for the account `111122223333`:
@@ -211,29 +207,20 @@ This policy is useful for SDK and CLI users who need to be able to see what file
 When you create a pipeline that manages your transcoding jobs, you must specify an IAM service role\. The IAM service role has a policy that specifies the permissions used by that pipeline for transcoding\.
 
 You have two options when you specify a role for a pipeline: 
-
 + Use the default role, which includes only the permissions that Elastic Transcoder needs for transcoding\. If you use the Elastic Transcoder console to create your pipelines, when you create your first pipeline the console gives you the option to create the default role automatically\. You must have administrative permissions to create IAM service roles, including the default role\.
-
 + Choose an existing role\. In this case, you must have previously created the role in IAM and attached a policy to the role that gives Elastic Transcoder sufficient permissions to transcode your files\. This is useful if you want to use the role for other AWS services as well\.
 
 ### The Default IAM Role for Pipelines<a name="access-control-default-policy"></a>
 
 The default role created by Elastic Transcoder lets Elastic Transcoder perform the following operations:
-
 + Get a file from an Amazon S3 bucket for transcoding\.
-
 + List the contents of any Amazon S3 bucket\.
-
 + Save a transcoded file to an Amazon S3 bucket\.
-
 + Create an Amazon S3 multipart upload\.
-
 + Publish notification to any SNS topic\.
 
 The policy prevents Elastic Transcoder from performing any of the following operations:
-
 + Perform any Amazon SNS delete operations, or add or remove a policy statement in a topic\.
-
 + Perform any Amazon S3 bucket or item delete operations, or add, remove, or modify a bucket policy\.
 
 The access \(permission\) policy definition for the default role looks like:

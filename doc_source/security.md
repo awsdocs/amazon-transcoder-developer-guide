@@ -6,7 +6,6 @@ IAM access controls are for when you want to be able to control who has access t
 
 For more information on security best practices, see the [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html) guide\.
 
-
+**Topics**
 + [Controlling Access to Elastic Transcoder](access-control.md)
 + [Data Encryption Options](encryption.md)
-+ [Digital Rights Management](drm.md)

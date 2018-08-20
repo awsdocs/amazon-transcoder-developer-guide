@@ -20,7 +20,7 @@ Elastic Transcoder handles the DRM packaging \(the last three steps of this proc
 
 1. The package server sends the DRM\-protected file to the distribution server, which distributes the file\.
 
-
+**Topics**
 + [PlayReady DRM](#play-ready)
 
 ## PlayReady DRM<a name="play-ready"></a>
@@ -30,11 +30,8 @@ Elastic Transcoder supports DRM using PlayReady DRM\.  This protects your media 
 ### Keys for Digital Rights Management<a name="drm-key-overview"></a>
 
 To use DRM with Elastic Transcoder, you need two types of keys and one key ID:
-
 + **Content key** — The key from your DRM license server, which is associated with your Elastic Transcoder job
-
 + **Key ID** — The ID of the key from the DRM license server, which the license server uses to identify the content key needed to decrypt a file
-
 + **AWS KMS key** — The AWS KMS key associated with your Elastic Transcoder pipeline
 
 You must have a content key to use DRM\. The content key is used to encrypt your media file\. All variations and segments of the same content are encrypted using the same content key\. Elastic Transcoder does not generate this key for you; you must obtain it from your DRM license server\. You must also have the ID of the key, so that Elastic Transcoder can package it in protected playlists, allowing the player to retrieve the content key from the license server\.
@@ -44,15 +41,10 @@ You must have an AWS KMS key to use DRM\. The AWS KMS key is used to encrypt you
 ### Streaming DRM\-Protected Content<a name="drm-setup"></a>
 
 To deliver DRM content, you must have the following:
-
 + A DRM license provider for generating and storing your DRM content keys\.
-
 + A location for storing your encrypted media files\. We recommend that you store your files in Amazon S3\.
-
 + \(Optional\) A content distribution network \(CDN\) to stream your files\. For more information about CDNs, see [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-encryption.html) in the *Amazon CloudFront Developer Guide*\.
-
 + An application capable of authenticating and authorizing your users\. You can use Amazon EC2 to run this application\. For more information, see [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances* \(for Windows users\) or [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) in the *Amazon EC2 User Guide for Linux Instances* \(for Linux users\)\. 
-
 + A player capable of playing DRM\-protected and encrypted files\.
 **Note**  
 To use HLS with PlayReady DRM, you must have a custom player\.

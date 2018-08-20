@@ -15,7 +15,6 @@ Metrics are grouped first by the service namespace, and then by the various dime
 1. In the **CloudWatch Metrics by Category** pane, under the metrics category for Elastic Transcoder, select a metrics category, and then in the upper pane, scroll down to view the full list of metrics\.
 
 **To view metrics using the AWS CLI**
-
 + At a command prompt, use the following command:
 
   ```

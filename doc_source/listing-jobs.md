@@ -3,14 +3,11 @@
 You can list the jobs in a specified pipeline or with a specified status either by using the Elastic Transcoder console or by using the applicable API action\. You can also view the settings for an individual job\. The following procedure explains how to list jobs and how to view settings for a job by using the console\.
 
 **Note**  
-When you list jobs by pipeline, Elastic Transcoder lists all of the jobs that you've ever created for that pipeline\. When you list jobs by status, Elastic Transcoder lists all of the jobs that you've ever created that currently have the specified status\.
+When you list jobs by pipeline, Elastic Transcoder lists all of the jobs that you've created in the last six months for that pipeline\. When you list jobs by status, Elastic Transcoder lists all of the jobs that you created during the past six months that currently have the specified status\.
 
 For information about how to use the API to:
-
 + List jobs in a specified pipeline, see [List Jobs by Pipeline](list-jobs-by-pipeline.md)\.
-
 + List jobs that have a specified status, see [List Jobs by Status](list-jobs-by-status.md)\.
-
 + Get settings for a specified job, see [Read Job](get-job.md)\.
 
 **Note**  

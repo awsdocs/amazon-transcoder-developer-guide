@@ -3,11 +3,8 @@
 You can cancel a job that still has a status of **Submitted**, which means that Elastic Transcoder hasn't started to transcode your file\. The following procedure explains how to cancel a job using the Elastic Transcoder console\. 
 
 To cancel a job using the API, pause the corresponding pipeline so Elastic Transcoder doesn't start processing the job, list jobs that have a status of **Submitted** to get the applicable job ID, then cancel the job using the job ID to identify which job you want to cancel\. For more information, see:
-
 + [Update Pipeline Status](update-pipeline-status.md)
-
 + [List Jobs by Status](list-jobs-by-status.md)
-
 + [Cancel Job](cancel-job.md)
 
 **To cancel a job using the Elastic Transcoder console**

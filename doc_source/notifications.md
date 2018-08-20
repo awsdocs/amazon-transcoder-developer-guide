@@ -1,13 +1,9 @@
 # Notifications of Job Status<a name="notifications"></a>
 
 Elastic Transcoder can notify you when the status of a job changes\. You can configure Elastic Transcoder to send you notifications for any combination \(or none\) of the following changes in status:
-
 + **Progressing:** Elastic Transcoder has started to process a job in the pipeline\.
-
 + **Completed:** Elastic Transcoder has finished processing a job in the pipeline\.
-
 + **Warning:** Elastic Transcoder encountered a warning condition while processing a job in the pipeline\.
-
 + **Error:** Elastic Transcoder encountered an error condition while processing a job in the pipeline\.
 
 Elastic Transcoder sends notifications by using Amazon Simple Notification Service \(Amazon SNS\)\. Amazon SNS offers a variety of notification options, including the ability to send messages to HTTP endpoints, email addresses, and Amazon Simple Queue Service \(Amazon SQS\) queues\. For more information about these and other options, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/)\. 

@@ -5,7 +5,7 @@ The example in this topic gives you a quick overview of how to use Amazon Elasti
 **Note**  
 If you aren't already acquainted with jobs, pipelines, and presets—the basic concepts behind Elastic Transcoder—take a quick look at the short overview topic: [What is Amazon Elastic Transcoder?](introduction.md)
 
-
+**Topics**
 + [Step 1: Sign Up for AWS](gs-1-sign-up.md)
 + [Step 2: Create an Amazon S3 Bucket or Two, and Upload a Media File](gs-2-create-s3-buckets.md)
 + [Step 3: Create a Pipeline](gs-3-create-a-pipeline.md)

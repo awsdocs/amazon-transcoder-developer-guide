@@ -2,7 +2,7 @@
 
 When you create a preset, you specify the following values\.
 
-
+**Topics**
 + [General Settings](#preset-settings-general)
 + [Video Settings](#preset-settings-video)
 + [Watermark Settings](#preset-settings-watermarks)
@@ -21,7 +21,7 @@ The name of the preset\. We recommend that the name be unique within the AWS acc
 A description of the preset\. The maximum length is 255 characters\.
 
  **Container**  
-The container type for the output file\. Valid values are **flac**, **flv**, **fmp4**, **gif**, **mp3**, **mp4**, **mpg**, **mxf**, **oga**, **ogg**, **ts**, **wav**, and **webm**\. The following table shows the supported codecs for containers\.      
+The container type for the output file\. Valid values are **flac**, **flv**, **fmp4**, **gif**, **mp2**, **mp3**, **mp4**, **mpg**, **mxf**, **oga**, **ogg**, **ts**, **wav**, and **webm**\. The following table shows the supported codecs for containers\.      
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/preset-settings.html)
 
 ![\[General Settings screenshot.\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)
@@ -36,11 +36,8 @@ For more information about VP8, go to [VP8](https://en.wikipedia.org/wiki/VP8)\.
 
  **\(H\.264/VP8 Only\) Profile**  
 The profile that you want to use for the output video\. When the video codec is **H\.264**, Elastic Transcoder supports the following profiles:  
-
 + **baseline:** The profile most commonly used for videoconferencing and for mobile applications\.
-
 + **main:** The profile used for standard\-definition digital TV broadcasts\.
-
 + **high:** The profile used for high\-definition digital TV broadcasts and for Blu\-ray discs\.
 For more information about H\.264 profiles, see [Profiles](http://en.wikipedia.org/wiki/H.264/MPEG-4_AVC#Profiles) in the Wikipedia entry "H\.264/MPEG\-4 AVC\."  
 When the video codec is **VP8**, Elastic Transcoder supports values of **0**, **1**, **2**, and **3**\.
@@ -50,7 +47,7 @@ The H\.264 level that you want to use for the output video\. Select the applicab
 For more information about levels, see [Levels](http://en.wikipedia.org/wiki/H.264/MPEG-4_AVC#Levels) in the Wikipedia entry "H\.264/MPEG\-4 AVC\."
 
  **\(H\.264 Only\) Maximum Number of Reference Frames**  
-The maximum number of previously decoded frames to use as a reference for decoding future frames\. If you enter a value greater than the recommended value based on the values that you specified for [Max Height](#preset-settings-video-max-height), [Max Height](#preset-settings-video-max-height), and [Level](#preset-settings-video-level), Elastic Transcoder displays a message that contains the recommended value\. For a detailed explanation, including the calculation that Elastic Transcoder performs, see [MaxReferenceFrames](create-preset.md#create-preset-request-video-max-reference-frames) in the topic [Create Preset](create-preset.md)\.
+The maximum number of previously decoded frames to use as a reference for decoding future frames\. If you enter a value greater than the recommended value based on the values that you specified for [Max Height](#preset-settings-video-max-height), [Max Height](#preset-settings-video-max-height), and [Level](#preset-settings-video-level), Elastic Transcoder displays a message that contains the recommended value\. For a detailed explanation, including the calculation that Elastic Transcoder performs, see MaxReferenceFrames in the topic [Create Preset](create-preset.md)\. 
 
  **\(Optional, H\.264/MPEG2/VP8/VP9 Only\) Maximum Bit Rate**  
 The maximum number of kilobits per second in the output video\. Specify a value between 16 and 62,500, inclusive\.  
@@ -97,22 +94,16 @@ For more information about key frames, see the Wikipedia entry [Video compressio
 
  **\(H\.264/MPEG2/VP8 Only\) Fixed Number of Frames Between Keyframes **  
 Whether to use a fixed value for [Fixed Number of Frames Between Keyframes](#preset-settings-video-fixed-gop):  
-
 + **Yes:** Elastic Transcoder uses the value of [Maximum Number of Frames Between Keyframes](#preset-settings-video-key-frames-max-dist) for the distance between key frames \(the number of frames in a group of pictures, or GOP\)\.
-
 + **No:** The distance between key frames can vary\.
 **Fixed Number of Frames Between Keyframes** must be set to `true` for **fmp4** containers\.
 
  **Bit Rate**  
 The bit rate of the video stream in the output video, in kilobits/second\. You can configure variable bit rate or constant bit rate encoding:  
-
 +  **Variable bit rate encoding:** Specify **auto\. ** Elastic Transcoder optimizes the bit rate and maintains a consistent quality for each frame of the output\. 
-
 + **Constant bit rate encoding:** Specify the bit rate\.
 Valid values for the video bit rate depend on the value that you chose for [Codec](#preset-settings-video-codec):  
-
 + **H\.264:** Valid values depend on the values of [Level](#preset-settings-video-level) and [Profile](#preset-settings-video-profile)\. We recommend that you specify a value less than or equal to the maximum H\.264\-compliant value listed in the following table for your level and profile:
-
 + **VP8:** do not use the following table; **Level** applies only when the video codec is H\.264\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/preset-settings.html)
 
@@ -129,9 +120,7 @@ For Smooth outputs, the **Frame Rate** must have a constant ratio to the **Maxim
 If you specify `auto` for **Frame Rate**, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video, up to the maximum frame rate\. If you do not specify a **Video Max Frame Rate**, Elastic Transcoder will use a default of `30`\.  
 Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than either the desired maximum frame rate of the output video or the default maximum frame rate\.  
 Elastic Transcoder uses the highest supported frame rate that meets both of the following criteria:  
-
 + The frame rate is less than or equal to the maximum frame rate\.
-
 + The frame rate divides into the input frame rate evenly, with no remainder\.
  For example, if you have an input file with a frame rate of 50 and specify a value of 30 for **Video Max Frame Rate**, Elastic Transcoder produces an output video for which the frame rate is 25 frames per second, because 25 is less than 30, and 50 divided by 25 is 2\.
 
@@ -147,17 +136,11 @@ If you specified **VP8** for [Codec](#preset-settings-video-codec), do not use t
 
  **Sizing Policy**  
 Specify one of the following values to control scaling of the output video:  
-
 + **Fit:** Elastic Transcoder scales the output video so it matches the value that you specified in either **Max Width** or **Max Height** without exceeding the other value\.
-
 + **Fill:** Elastic Transcoder scales the output video so it matches the value that you specified in either **Max Width** or **Max Height** and matches or exceeds the other value\. Elastic Transcoder centers the output video and then crops it in the dimension \(if any\) that exceeds the maximum value\. 
-
 + **Stretch:** Elastic Transcoder stretches the output video to match the values that you specified for **Max Width** and **Max Height**\. If the relative proportions of the input video and the output video are different, the output video will be distorted\.
-
 + **Keep:** Elastic Transcoder does not scale the output video\. If either dimension of the input video exceeds the values that you specified for **Max Width** and **Max Height**, Elastic Transcoder crops the output video\.
-
 + **ShrinkToFit:** Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of **Max Width** and **Max Height** without exceeding either value\. If you specify this option, Elastic Transcoder does not scale the video up\.
-
 + **ShrinkToFill:** Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of **Max Width** and **Max Height** without dropping below either value\. If you specify this option, Elastic Transcoder does not scale the video up\.
 The following table shows possible effects of **Sizing Policy** settings on the output video:      
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/preset-settings.html)
@@ -193,43 +176,31 @@ A unique identifier for the settings for one watermark\. The value of **Id** can
 
 **Maximum Width **  
 The maximum width of the watermark in one of the following formats:  
-
-+ *number of pixels* **px**: The minimum value is 16 pixels, and the maximum value is the value of [MaxWidth](create-preset.md#create-preset-request-video-max-width)\. 
-
++ *number of pixels* **px**: The minimum value is 16 pixels, and the maximum value is the value of **MaxHeight**\. 
 + *integer percentage* **%**: The range of valid values is 0 to 100\. Use the value of **Target** to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation\.
-If you specify the value in pixels, it must be less than or equal to the value of [MaxWidth](create-preset.md#create-preset-request-video-max-width)\.
+If you specify the value in pixels, it must be less than or equal to the value of **MaxHeight**\.
 
 **Maximum Height **  
 The maximum height of the watermark in one of the following formats:  
-
-+ *number of pixels* **px**: The minimum value is 16 pixels, and the maximum value is the value of [MaxHeight](create-preset.md#create-preset-request-video-max-height)\. 
-
++ *number of pixels* **px**: The minimum value is 16 pixels, and the maximum value is the value of **MaxHeight**\. 
 + *integer percentage* **%**: The range of valid values is 0 to 100\. Use the value of **Target** to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation\.
-If you specify the value in pixels, it must be less than or equal to the value of [MaxHeight](create-preset.md#create-preset-request-video-max-height)\.
+If you specify the value in pixels, it must be less than or equal to the value of **MaxHeight**\.
 
 **Sizing Policy **  
 A value that controls scaling of the watermark:  
-
 + **Fit:** Elastic Transcoder scales the watermark so it matches the value that you specified in either **Maximum Width** or **Maximum Height** without exceeding the other value\.
-
 + **Stretch:** Elastic Transcoder stretches the watermark to match the values that you specified for **Maximum Width** and **Maximum Height**\. If the relative proportions of the watermark and the values of **Maximum Width** and **Maximum Height** are different, the watermark will be distorted\.
-
 + **Shrink to Fit:** Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of **Maximum Width** and **Maximum Height** without exceeding either value\. If you specify this option, Elastic Transcoder does not scale the watermark up\.
 
 **Horizontal Alignment**  
 The horizontal position of the watermark\. To position the watermark with respect to the left or right border, also specify a non\-zero value for **Horizontal Offset**:  
-
 + **Left:** The left edge of the watermark is aligned with the left border of the video\.
-
 + **Right:** The right edge of the watermark is aligned with the right border of the video\.
-
 + **Center:** The watermark is centered between the left and right borders\.
 
 **Horizontal Offset **  
 The amount by which you want the horizontal position of the watermark to be offset from the position specified by **Horizontal Alignment**:   
-
-+ *number of pixels* **px**: The minimum value is 0 pixels, and the maximum value is the value of [MaxWidth](create-preset.md#create-preset-request-video-max-width)\. 
-
++ *number of pixels* **px**: The minimum value is 0 pixels, and the maximum value is the value of **MaxHeight**\. 
 + *integer percentage* **%**: The range of valid values is 0 to 100\.
 For example, if you specify **Left** for **Horizontal Alignment** and **5px** for **Horizontal Offset**, the left side of the watermark appears 5 pixels from the left border of the output video\.  
 **HorizontalOffset** is only valid when the value of **Horizontal Alignment** is **Left** or **Right**\.  
@@ -238,18 +209,13 @@ Use the value of **Target** to specify whether you want Elastic Transcoder to in
 
 **Vertical Alignment **  
 The vertical position of the watermark\. To position the watermark with respect to the top or bottom border, also specify a non\-zero value for **Vertical Offset**:  
-
 + **Top:** The top edge of the watermark is aligned with the top border of the video\.
-
 + **Bottom:** The bottom edge of the watermark is aligned with the bottom border of the video\.
-
 + **Center:** The watermark is centered between the top and bottom borders\.
 
 **Vertical Offset **  
 The amount by which you want the vertical position of the watermark to be offset from the position specified by **Vertical Alignment**:   
-
 + *number of pixels* **px**: The minimum value is 0 pixels, and the maximum value is the value of **Maximum Height**\. 
-
 + *integer percentage* **%**: The range of valid values is 0 to 100\.
 For example, if you specify **Top** for **Vertical Alignment** and **5px** for **Vertical Offset**, the top of the watermark appears 5 pixels from the top border of the output video\.  
 **Vertical Offset** is only valid when the value of **Vertical Alignment** is **Top** or **Bottom**\.  
@@ -262,11 +228,9 @@ Elastic Transcoder supports transparent `.png` graphics\. If you use a transpare
 
 **Target**  
 A value that determines how Elastic Transcoder interprets values that you specified for the watermark settings **Horizontal Offset**, **Vertical Offset**, **Maximum Width**, and **Maximum Height**:   
-
 + **Content:** **Horizontal Offset** and **Vertical Offset** values are calculated based on the borders of the video **excluding** black bars added by Elastic Transcoder, if any\.
 
   In addition, **Maximum Width** and **Maximum Height**, if specified as a percentage, are calculated based on the borders of the video **excluding** black bars added by Elastic Transcoder, if any\.
-
 + **Frame:** **Horizontal Offset** and **Vertical Offset** values are calculated based on the borders of the video **including** black bars added by Elastic Transcoder, if any\.
 
   In addition, **Maximum Width** and **Maximum Height**, if specified as a percentage, are calculated based on the borders of the video **including** black bars added by Elastic Transcoder, if any\.
@@ -281,13 +245,9 @@ The audio codec for the output file\. Valid values are `AAC`, `flac`, `mp2`, `mp
 
  **\(AAC Only\) Profile**  
 If you specified **AAC** for **Audio:Codec**, choose the AAC profile for the output file\. Elastic Transcoder supports the following profiles:  
-
 + **auto**: If you specify **auto**, Elastic Transcoder selects the profile based on the bit rate selected for the output file\.
-
 + **AAC\-LC**: The most common AAC profile\. Use for bit rates larger than 64 kbps\. For more information, see [ Advanced Audio Coding\.](http://en.wikipedia.org/wiki/Advanced_Audio_Coding)
-
 + **HE\-AAC**: Not supported on some older players and devices\. Use for bit rates between 40 and 80 kbps\. For more information, see [ High\-Efficiency Advanced Audio Coding\.](http://en.wikipedia.org/wiki/HE-AAC)
-
 + **HE\-AACv2**: Not supported on some players and devices\. Use for bit rates less than 48 kbps\. For more information, see [High\-Efficiency Advanced Audio Coding\.](http://en.wikipedia.org/wiki/HE-AAC)\.
 All outputs in a **Smooth** playlist must have the same value for **Profile**\.  
 If you created any presets before AAC profiles were added, Elastic Transcoder will use the AAC\-LC profile for those presets\.
@@ -354,17 +314,11 @@ The maximum width of thumbnails in pixels\. If you specify **auto**, Elastic Tra
 
  **Sizing Policy**  
 Specify one of the following values to control scaling of thumbnails:  
-
 + **Fit:** Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail **Max Width** or **Max Height** settings without exceeding the other value\.
-
 + **Fill:** Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail **Max Width** or **Max Height** settings and matches or exceeds the other value\. Elastic Transcoder centers the image in thumbnails and then crops in the dimension \(if any\) that exceeds the maximum value\. 
-
 + **Stretch:** Elastic Transcoder stretches thumbnails to match the values that you specified for thumbnail **Max Width** and **Max Height** settings\. If the relative proportions of the input video and thumbnails are different, the thumbnails will be distorted\.
-
 + **Keep:** Elastic Transcoder does not scale thumbnails\. If either dimension of the input video exceeds the values that you specified for thumbnail **Max Width** and **Max Height** settings, Elastic Transcoder crops the thumbnails\.
-
 + **ShrinkToFit:** Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail **MaxWidth** and **MaxHeight** without exceeding either value\. If you specify this option, Elastic Transcoder does not scale thumbnails up\.
-
 + **ShrinkToFill:** Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of **MaxWidth** and **MaxHeight** without dropping below either value\. If you specify this option, Elastic Transcoder does not scale thumbnails up\.
 The following table shows possible effects of **Sizing Policy** settings on thumbnails:      
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/preset-settings.html)

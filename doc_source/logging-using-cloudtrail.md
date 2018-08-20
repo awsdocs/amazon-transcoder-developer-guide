@@ -1,55 +1,33 @@
-# Logging Elastic Transcoder API Calls Using CloudTrail<a name="logging_using_cloudtrail"></a>
+# Logging Elastic Transcoder API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
-Elastic Transcoder is integrated with CloudTrail, an AWS service that captures information about every request that is sent to the Elastic Transcoder API by your AWS account, including your IAM users\. CloudTrail periodically saves log files of these requests to an Amazon S3 bucket that you specify\. CloudTrail captures information about all requests, whether they were made using the Elastic Transcoder console, the Elastic Transcoder API, the AWS SDKs, the Elastic Transcoder CLI, or another service, for example, CloudFront\.
+Elastic Transcoder is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in Elastic Transcoder\. CloudTrail captures all API calls for Elastic Transcoder as events, including calls from the Elastic Transcoder console and from code calls to the Elastic Transcoder APIs\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Elastic Transcoder\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to Elastic Transcoder, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
 
-You can use information in the CloudTrail log files to determine which requests were made to Elastic Transcoder, the source IP address from which each request was made, who made the request, when it was made, and so on\. To learn more about CloudTrail, including how to configure and enable it, see the *[AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)*\.
+To learn more about CloudTrail, see the [AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
+## Elastic Transcoder Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
 
-+ [Elastic Transcoder Information in CloudTrail Log Files](#cloudfront_info_in_cloudtrail)
-+ [Understanding Elastic Transcoder Log File Entries](#understanding_cloudfront_entries)
+CloudTrail is enabled on your AWS account when you create the account\. When activity occurs in Elastic Transcoder, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\. 
 
-## Elastic Transcoder Information in CloudTrail Log Files<a name="cloudfront_info_in_cloudtrail"></a>
+For an ongoing record of events in your AWS account, including events for Elastic Transcoder, create a trail\. A trail enables CloudTrail to deliver log files to an Amazon S3 bucket\. By default, when you create a trail in the console, the trail applies to all regions\. The trail logs events from all regions in the AWS partition and delivers the log files to the Amazon S3 bucket that you specify\. Additionally, you can configure other AWS services to further analyze and act upon the event data collected in CloudTrail logs\. For more information, see: 
++ [Overview for Creating a Trail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html)
++ [CloudTrail Supported Services and Integrations](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-aws-service-specific-topics.html#cloudtrail-aws-service-specific-topics-integrations)
++ [Configuring Amazon SNS Notifications for CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)
++ [Receiving CloudTrail Log Files from Multiple Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) and [Receiving CloudTrail Log Files from Multiple Accounts](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
 
-When you enable CloudTrail, CloudTrail captures every request that you make to every AWS service that CloudTrail supports\. \(For a list of supported services, see [ Supported Services](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_supported_services.html) in the *AWS CloudTrail User Guide*\.\) CloudTrail saves the captured requests in log files in each region separately, and stores them in an Amazon S3 bucket\. The log files aren't organized or sorted by service; each log file might contain records from more than one service\. CloudTrail determines when to create a new log file\.
+All Elastic Transcoder actions are logged by CloudTrail and are documented in the [API Reference](api-reference.md)\. For example, calls to the `CreatePipeline`, `CreateJob`, and `CreatePreset` sections generate entries in the CloudTrail log files\. 
 
-**Note**  
-CloudTrail supports all Elastic Transcoder API actions\.
+Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
++ Whether the request was made with root or IAM user credentials\.
++ Whether the request was made with temporary security credentials for a role or federated user\.
++ Whether the request was made by another AWS service\.
 
-Every log file entry contains information about who made the request\. The user identity information in the log file helps you determine whether the request was made using root or IAM user credentials, using temporary security credentials for a role or federated user, or by another AWS service\. For more information, see [userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_user_identity.html) in the *AWS CloudTrail User Guide*\.
+For more information, see the [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 
-You can store log files for as long as you want\. You can also define Amazon S3 life cycle rules to archive or delete log files automatically\.
+## Understanding Elastic Transcoder Log File Entries<a name="understanding-service-name-entries"></a>
 
-By default, your log files are encrypted by using Amazon S3 server\-side encryption \(SSE\)\.
+A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\. 
 
-You can choose to have CloudTrail publish Amazon SNS notifications when new log files are delivered if you want to take quick action upon log file delivery\. For more information, see [Configuring Amazon SNS Notifications](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html) in the *AWS CloudTrail User Guide*\.
-
-You can also aggregate log files from multiple AWS regions and multiple AWS accounts into a single Amazon S3 bucket\. For more information, see [Aggregating CloudTrail Log Files to a Single Amazon S3 Bucket](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_top_level.html) in the *AWS CloudTrail User Guide*\. 
-
-There is no cost to use the CloudTrail service\. However, standard rates for Amazon S3 usage apply as well as rates for Amazon SNS usage should you include that option\. For pricing details, see the [Amazon S3](http://aws.amazon.com/s3/pricing/) and [Amazon SNS](http://aws.amazon.com/sns/pricing/) pricing pages\.
-
-## Understanding Elastic Transcoder Log File Entries<a name="understanding_cloudfront_entries"></a>
-
-Each JSON\-formatted CloudTrail log file can contain one or more log entries\. A log entry represents a single request from any source and includes information about the requested action, including any parameters, the date and time of the action, and so on\. The log entries are not guaranteed to be in any particular order; they are not an ordered stack trace of API calls\.
-
-The `eventSource` element identifies the source of the action that occurred\. For example, the following `eventSource` value indicates that Elastic Transcoder was called:
-
-`elastictranscoder.amazonaws.com`
-
-The `eventName` element identifies the action that occurred\. For example, the following `eventName` value indicates that a job was created:
-
-`CreateJob`
-
-The following example shows a CloudTrail log entry that demonstrates five actions:
-
-+ Creating a job\. The value of `eventName` is `CreateJob`\.
-
-+ Listing jobs by status\. The value of `eventName` is `ListJobsByStatus`\.
-
-+ Getting a job\. The value of `eventName` is `ReadJob`\.
-
-+ Deleting a Preset\. The value of `eventName` is `DeletePreset`\.
-
-+ Deleting a pipeline\. The value of `eventName` is `DeletePipeline`\.
+The following example shows a CloudTrail log entry that demonstrates the `CreateJob`, `ListJobsByStatus`, `ReadJob`, `DeletePreset`, and `DeletePipeline` actions\.
 
 ```
 {

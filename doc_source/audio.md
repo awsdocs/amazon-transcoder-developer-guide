@@ -9,17 +9,11 @@ Not all tracks have audio information\. Tracks without audio are known as Mit Ou
 Elastic Transcoder defaults to a single track, but lets you choose the number of channels in that track\. You can choose up to two tracks, or pass through the same number of channels that your input has\. If you transcode a file with an MXF container, Elastic Transcoder lets you create multiple tracks for your output\.
 
 You can use Elastic Transcoder presets to do the following:
-
 + Remove audio from an output
-
 + Duplicate mono to multiple channels
-
 + Combine \(downmix\) stereo to mono
-
 + Downmix surround sound to stereo or mono
-
 + Pass through the existing channels
-
 + \(MXF only\) Add MOS tracks to your output
 
 For more information about using Elastic Transcoder to transcode audio, see [Channels](preset-settings.md#preset-settings-audio-channels)\.

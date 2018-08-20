@@ -26,9 +26,7 @@ You can use HLS content protection to encrypt segments of a streamed file, or yo
 ## Keys for HLS Content Protection<a name="key-overview"></a>
 
 To use HLS content protection with Elastic Transcoder, you need two types of keys:
-
 + **Customer master key \(CMK\)** — The key associated with your Elastic Transcoder pipeline
-
 + **Data key** — The key associated with your Elastic Transcoder job
 
 You must have a customer master key \(CMK\) to use HLS content protection\. The CMK is used to encrypt your data key before it is sent it over the Internet\. We recommend that you create one CMK key to use with all your transcoding jobs\. For more information about creating and setting up a CMK, see [Using AWS KMS with Elastic Transcoder](encryption.md#using-kms)\.
@@ -38,13 +36,9 @@ The data key is used to encrypt your media file\. All variations and segments of
 ## Streaming HLS Protected Content<a name="hls-cp-setup"></a>
 
 To deliver HLS protected content, you must have the following:
-
 + A location for storing your encrypted media files and data keys\. We recommend that you store your files in Amazon S3 and secure your keys in a database, such as DynamoDB\. For more information on DynamoDB, see [What is Amazon DynamoDB?](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html) in the *Amazon DynamoDB Developer Guide*\.
-
 + \(Optional\) A content distribution network \(CDN\) to stream your files\. For more information about CDNs, see [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-encryption.html) in the *Amazon CloudFront Developer Guide*\.
-
 + An application capable of authenticating and authorizing your users, and securely serving the data encryption key\. You can use Amazon EC2 to run this application\. For more information, see [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances* \(for Windows users\) or [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) in the *Amazon EC2 User Guide for Linux Instances* \(for Linux users\)\. 
-
 + A player capable of decrypting an encrypted HLS file\. For more information, go to [Http Live Streaming](http://en.wikipedia.org/wiki/HTTP_Live_Streaming#Client_software)\.
 
 ## Creating Encrypted Streamed Content<a name="hls-cp-ets-setup"></a>

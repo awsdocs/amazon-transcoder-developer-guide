@@ -2,7 +2,7 @@
 
 When you create a pipeline using the Elastic Transcoder console, you can specify the following values\.
 
-
+**Topics**
 + [Region](#pipeline-settings-region)
 + [General Settings](#pipeline-settings-general)
 + [Configure Amazon S3 Bucket for Transcoded Files and Playlists](#pipeline-settings-configure-transcoded-bucket)
@@ -40,13 +40,10 @@ The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you wa
 
  **Grantee Type**  
 Specify how you want to identify the users or groups that you want to have access to transcoded files and playlists\. When you select a grantee type, the [Grantee Type](#pipeline-settings-transcoded-grantee-type) field appears:  
-
 + **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
 **Important**  
 A canonical user ID is not the same as an AWS account number\.
-
 + **Email:** The value of **Grantee** is the registered email address of an AWS account\.
-
 + **Group:** The value of **Grantee** is one of the following predefined Amazon S3 groups: **AllUsers**, **AuthenticatedUsers**, or **LogDelivery**\.
 
  **Grantee**  
@@ -54,13 +51,9 @@ The AWS user or group that you want to have access to transcoded files and playl
 
  **Access**  
 The permission that you want to give to the AWS user that you specified in [Grantee](#pipeline-settings-transcoded-grantee)\. Permissions are granted on the transcoded files and playlists that Elastic Transcoder adds to the bucket\. Valid values include:  
-
 + ****Open/Download**:** The grantee can read the objects and metadata for transcoded files and playlists that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****View Permissions**:** The grantee can read the object ACL for transcoded files and playlists that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****Edit Permissions**:** The grantee can write the ACL for transcoded files and playlists that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****Full Control**:** The grantee has permissions to read objects, and view and edit the ACL for transcoded files and playlists that Elastic Transcoder adds to the Amazon S3 bucket\.
 
 ![\[Screenshot of the S3 bucket settings for files and playlists.\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)
@@ -77,13 +70,10 @@ The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you wa
 
  **Grantee Type**  
 Specify how you want to identify the users or groups that you want to have access to thumbnails\. When you select a grantee type, the [Grantee Type](#pipeline-settings-thumbnail-grantee-type) field appears:  
-
 + **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
 **Important**  
 A canonical user ID is not the same as an AWS account number\.
-
 + **Email:** The value of **Grantee** is the registered email address of an AWS account\.
-
 + **Group:** The value of **Grantee** is one of the following predefined Amazon S3 groups: **AllUsers**, **AuthenticatedUsers**, or **LogDelivery**\.
 
  **Grantee**  
@@ -91,13 +81,9 @@ The AWS user or group that you want to have access to thumbnails\. To identify t
 
  **Access**  
 The permission that you want to give to the AWS user that you specified in [Grantee](#pipeline-settings-thumbnail-grantee)\. Permissions are granted on the thumbnails that Elastic Transcoder adds to the bucket\. Valid values include:  
-
 + ****Open/Download**:** The grantee can read the objects and metadata for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****View Permissions**:** The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****Edit Permissions**:** The grantee can write the ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket\.
-
 + ****Full Control**:** The grantee has permissions to read objects, and view and edit the ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket\.
 
 ![\[Screenshot of the S3 bucket settings for thumbnails.\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)

@@ -3,9 +3,7 @@
 You can list the pipelines associated with the current AWS account, and you can also view the settings for a specified pipeline\. The following procedure explains how to list pipelines and how to view settings for a pipeline by using the console\.
 
 For information about how to use the API to:
-
 + List pipelines for the current AWS account, see [List Pipelines](list-pipelines.md)\.
-
 + Get settings for a specified pipeline, see [Read Pipeline](get-pipeline.md)\.
 
 **To list pipelines and view pipeline settings using the Elastic Transcoder console**

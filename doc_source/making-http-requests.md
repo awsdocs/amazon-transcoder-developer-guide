@@ -4,7 +4,7 @@ Elastic Transcoder REST requests are HTTPS requests as defined in RFC 2616\. \(F
 
 A typical REST action consists of sending an HTTPS request to Elastic Transcoder and waiting for the response\. Like any HTTP request, a REST request to Elastic Transcoder contains a request method, a URI, request headers, and sometimes a query string or request body\. The response contains an HTTP status code, response headers, and sometimes a response body\.
 
-
+**Topics**
 + [HTTP Header Contents](#http-request-header)
 + [HTTP Request Body](#http-request-body)
 + [HTTP Responses](#http-response-header)
