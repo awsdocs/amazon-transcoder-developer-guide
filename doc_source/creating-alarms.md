@@ -16,7 +16,7 @@ You can use the `Standyby Time` metric to track how long it takes a pipeline to 
 
 1. For **Actions**, choose an existing Amazon SNS topic\.
 
-   For more information about Amazon SNS notifications, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
+   For more information about Amazon SNS notifications, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
 
 1. Choose **Create Alarm**\.<a name="track-jobs-errored"></a>
 
@@ -34,7 +34,7 @@ You can use the `Job Errored` metric to track how many jobs failed in your pipel
 
 1. For **Actions**, choose an existing Amazon SNS topic\.
 
-   For more information about Amazon SNS notifications, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
+   For more information about Amazon SNS notifications, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
 
 1. Choose **Create Alarm**\.<a name="track-jobs-completed"></a>
 
@@ -52,6 +52,6 @@ You can use the `Jobs Completed` metric to track how many jobs a pipeline has tr
 
 1. For **Actions**, choose an existing Amazon SNS topic\.
 
-   For more information about Amazon SNS notifications, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
+   For more information about Amazon SNS notifications, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the Amazon Simple Notification Service Developer Guide\.
 
 1. Choose **Create Alarm**\.

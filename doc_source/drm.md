@@ -43,8 +43,8 @@ You must have an AWS KMS key to use DRM\. The AWS KMS key is used to encrypt you
 To deliver DRM content, you must have the following:
 + A DRM license provider for generating and storing your DRM content keys\.
 + A location for storing your encrypted media files\. We recommend that you store your files in Amazon S3\.
-+ \(Optional\) A content distribution network \(CDN\) to stream your files\. For more information about CDNs, see [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-encryption.html) in the *Amazon CloudFront Developer Guide*\.
-+ An application capable of authenticating and authorizing your users\. You can use Amazon EC2 to run this application\. For more information, see [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances* \(for Windows users\) or [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) in the *Amazon EC2 User Guide for Linux Instances* \(for Linux users\)\. 
++ \(Optional\) A content distribution network \(CDN\) to stream your files\. For more information about CDNs, see [Getting Started with CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-encryption.html) in the *Amazon CloudFront Developer Guide*\.
++ An application capable of authenticating and authorizing your users\. You can use Amazon EC2 to run this application\. For more information, see [Setting Up with Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances* \(for Windows users\) or [Setting Up with Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) in the *Amazon EC2 User Guide for Linux Instances* \(for Linux users\)\. 
 + A player capable of playing DRM\-protected and encrypted files\.
 **Note**  
 To use HLS with PlayReady DRM, you must have a custom player\.

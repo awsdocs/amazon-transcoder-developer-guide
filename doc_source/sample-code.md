@@ -31,7 +31,7 @@ You use HTTP Live Streaming \(HLS\) outputs in order to deliver adaptive\-bit ra
 
 If you poll the Elastic Transcoder's `ReadJob` API to track job status, you need to continuously call `ReadJob` on every submitted job\. This methodology cannot scale as the number of transcode jobs increases\. To solve this problem, Elastic Transcoder can publish notifications to Amazon SNS which provides an event\-driven mechanism for tracking job status\.
 
-Each Elastic Transcoder notification is sent as a JSON object in the `Message` field\. Because notifications are themselves sent in JSON format, you need to escape the Elastic Transcoder notification in the message string\. For information about the format and content of Elastic Transcoder notifications, see the [Notifications](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/notifications.html) section\.
+Each Elastic Transcoder notification is sent as a JSON object in the `Message` field\. Because notifications are themselves sent in JSON format, you need to escape the Elastic Transcoder notification in the message string\. For information about the format and content of Elastic Transcoder notifications, see the [Notifications](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/notifications.html) section\.
 
 When you are writing custom code to handle job status notifications, follow these best practices:
 + **Handlers must be idempotent\.** It is possible that a notification will be delivered more than once\.
@@ -78,11 +78,11 @@ The sample code makes two major assumptions:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
 
 #### Setting up the AWS SDK for Java<a name="java-sdk"></a>
 
@@ -277,11 +277,11 @@ The sample code makes one major assumption:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
 
 #### Setting up the AWS SDK for Ruby<a name="ruby-sdk"></a>
 
@@ -441,11 +441,11 @@ The sample code makes three major assumptions:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
 
 #### Installing the sample code<a name="php-install"></a>
 
@@ -607,11 +607,11 @@ It makes one major assumption:
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
 
 #### Setting up the AWS SDK for Python<a name="python-sdk"></a>
 

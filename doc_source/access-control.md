@@ -8,13 +8,13 @@ Elastic Transcoder lets you use AWS Identity and Access Management \(IAM\) to co
 
 ## Controlling User Access to Elastic Transcoder<a name="access-control-users"></a>
 
-To control what users can do with Elastic Transcoder \(for example, who is allowed to create and manage pipelines and jobs\), you can create policies for users\. For IAM users in your account, you can attach the policy directly to the IAM user or to an IAM group\. If you are granting permissions to an IAM user in another AWS account, known as delegation, or to users signing in from an external identity system, known as federation, you can attach the policy to a role and allow the user to assume that role\. For more information on delegation and federation, see [Roles \(Delegation and Federation\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html) in the *IAM User Guide*\.
+To control what users can do with Elastic Transcoder \(for example, who is allowed to create and manage pipelines and jobs\), you can create policies for users\. For IAM users in your account, you can attach the policy directly to the IAM user or to an IAM group\. If you are granting permissions to an IAM user in another AWS account, known as delegation, or to users signing in from an external identity system, known as federation, you can attach the policy to a role and allow the user to assume that role\. For more information on delegation and federation, see [Roles \(Delegation and Federation\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html) in the *IAM User Guide*\.
 
 To control Elastic Transcoder's access to other AWS services, you can create service roles\. These are IAM roles that you assign when you create a pipeline, and that give Elastic Transcoder itself permissions to perform the tasks associated with transcoding\. 
 
 As an example of how user and service roles are both important during the transcoding process, Elastic Transcoder needs a service role in order to get files from an Amazon S3 bucket and store the transcoded files in another Amazon S3 bucket, while a user needs an IAM role that allows them to create a job in Elastic Transcoder\.
 
-For more information about IAM, see the *[IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/)*\. For more information about service roles, see [Creating a Role for an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html)\.
+For more information about IAM, see the *[IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)*\. For more information about service roles, see [Creating a Role for an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html)\.
 
 ### Example User Policies for Elastic Transcoder<a name="access-control-example-policy"></a>
 
@@ -22,7 +22,7 @@ To allow users to perform Elastic Transcoder administrative functions, such as c
 
 To use these policies with an IAM user, you attach them directly to the IAM user or to an IAM group that the user belongs to\. To use these policies with a delegated or federated user, you attach them to an IAM role that the delegated or federated user will assume\. 
 
-For more information on managing policies, see [Managing IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in the *IAM User Guide*\.
+For more information on managing policies, see [Managing IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in the *IAM User Guide*\.
 
 #### Give Users Read\-only Access to Elastic Transcoder and Amazon S3<a name="access-control-example-3"></a>
 
@@ -77,7 +77,7 @@ The following policy lets users perform any Elastic Transcoder or CloudFront act
 
 This policy is useful for users who are administrators for Elastic Transcoder\.
 
-We strongly recommend that for extra security, users who have administrative permissions use multi\-factor authentication \(MFA\)\. For more information, see [Using Multi\-Factor Authentication \(MFA\) Devices with AWS](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingMFA.html) in the *IAM User Guide*\.
+We strongly recommend that for extra security, users who have administrative permissions use multi\-factor authentication \(MFA\)\. For more information, see [Using Multi\-Factor Authentication \(MFA\) Devices with AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingMFA.html) in the *IAM User Guide*\.
 
 **Important**  
 We recommend that you do not add policies to IAM roles that include permissions for IAM actions\. The policy illustrated here is useful for IAM users in your own account, but should not be assigned to a role that can be assumed by users in another account or by a federated user\.
@@ -145,7 +145,7 @@ arn:aws:elastictranscoder:region:account:resource/ID
 ```
 
 Replace the *region*, *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
-+ *region*: The name of the region\. A list of regions is available [here](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region)\. To indicate all regions, use a wildcard \(\*\)\. You must specify a value\.
++ *region*: The name of the region\. A list of regions is available [here](https://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region)\. To indicate all regions, use a wildcard \(\*\)\. You must specify a value\.
 + *account*: The ID of the AWS account\. You must specify a value\.
 + *resource*: The type of Elastic Transcoder resource; `preset`, `pipeline`, or `job`\.
 + *ID*: The ID of the specific preset, pipeline, or job, or \* to indicate all resources of the specified type that are associated with the current AWS account\.
@@ -158,7 +158,7 @@ arn:aws:elastictranscoder:us-east-2:111122223333:preset/*
 
 You can find the ARN of a resource by clicking the magnifying\-glass icon \( ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/images/magnifying-glass-icon.png) \) next to the resource name in the pipeline, preset, or job console pages\.
 
-For more information, see [Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
+For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
 
 #### Example Policy for Restricting Resources for Users<a name="access-control-resources-example"></a>
 
@@ -261,3 +261,29 @@ The access \(permission\) policy definition for the default role looks like:
    ]
 }
 ```
+
+#### Supported Regions for Elastic Transcoder Service\-Linked Roles<a name="slr-regions"></a>
+
+Elastic Transcoder supports using service\-linked roles in the following regions\.
+
+
+****  
+
+| Region Name | Region Identity | Support in Elastic Transcoder | 
+| --- | --- | --- | 
+| US East \(N\. Virginia\) | us\-east\-1 | Yes | 
+| US East \(Ohio\) | us\-east\-2 | No | 
+| US West \(N\. California\) | us\-west\-1 | Yes | 
+| US West \(Oregon\) | us\-west\-2 | Yes | 
+| Asia Pacific \(Mumbai\) | ap\-south\-1 | Yes | 
+| Asia Pacific \(Osaka\-Local\) | ap\-northeast\-3 | No | 
+| Asia Pacific \(Seoul\) | ap\-northeast\-2 | No | 
+| Asia Pacific \(Singapore\) | ap\-southeast\-1 | Yes | 
+| Asia Pacific \(Sydney\) | ap\-southeast\-2 | Yes | 
+| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | Yes | 
+| Canada \(Central\) | ca\-central\-1 | No | 
+| EU \(Frankfurt\) | eu\-central\-1 | No | 
+| EU \(Ireland\) | eu\-west\-1 | Yes | 
+| EU \(London\) | eu\-west\-2 | No | 
+| EU \(Paris\) | eu\-west\-3 | No | 
+| South America \(São Paulo\) | sa\-east\-1 | No | 

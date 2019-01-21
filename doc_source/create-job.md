@@ -629,6 +629,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
             "Status":"Complete",
             "StatusDetail":"",
             "AppliedColorSpaceConversion":"None"
+         }
       ],
       "Playlists":[
          {

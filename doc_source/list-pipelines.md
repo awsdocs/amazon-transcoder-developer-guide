@@ -73,7 +73,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
          "Notifications":{
             "Progressing":"SNS topic to notify when
                Elastic Transcoder has started to process the job",
-            "Completed":"SNS topic to notify when
+            "Complete":"SNS topic to notify when
                Elastic Transcoder has finished processing the job",
             "Warning":"SNS topic to notify when
                Elastic Transcoder encounters a warning condition"
@@ -187,7 +187,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
          "AwsKmsKeyArn":"base64 encoded key from KMS",
          "Notifications":{
             "Progressing":"",
-            "Completed":"",
+            "Complete":"",
             "Warning":"",
             "Error":"arn:aws:sns:us-east-1:111222333444:ETS_Errors"
          },
@@ -230,7 +230,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
          "AwsKmsKeyArn":"base64 encoded key from KMS",
          "Notifications":{
             "Progressing":"",
-            "Completed":"",
+            "Complete":"",
             "Warning":"",
             "Error":"arn:aws:sns:us-east-1:111222333444:ETS_Errors"
          },

@@ -18,7 +18,7 @@ Elastic Transcoder supports two main encryption options:
 
   By default, Amazon S3 buckets accept both encrypted and unencrypted files, but you can set up your Amazon S3 bucket to accept only encrypted files\. You don’t need to make permission changes as long as Elastic Transcoder has access to your Amazon S3 bucket\. 
 
-  For more information about Amazon S3 server\-side encryption, see [Protecting Data Using Server\-Side Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about AWS KMS keys, see [What is the AWS Key Management Service?](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide*\.
+  For more information about Amazon S3 server\-side encryption, see [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about AWS KMS keys, see [What is the AWS Key Management Service?](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide*\.
 **Note**  
 There are additional charges for using AWS\-KMS keys\. For more information, see [AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing)\.
 + **Client\-Side Encryption Using Customer\-Provided Keys:** Elastic Transcoder can also use a client\-provided encryption key to decrypt input files \(which you’ve already encrypted yourself\) or encrypt your output files before storing them in Amazon S3\. In this case, you manage the encryption keys and related tools\. 
@@ -41,9 +41,9 @@ Your private encryption keys and your unencrypted data are never stored by AWS; 
 
   To give Elastic Transcoder permission to use your key, see [Using AWS KMS with Elastic Transcoder](#using-kms)\.
 
-  For more information on encrypting data, see the [AWS KMS API Reference](https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html) and [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html)\. For more information on contexts, see [Encryption Context](http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html) in the *AWS Key Management Service Developer Guide*\.
+  For more information on encrypting data, see the [AWS KMS API Reference](https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html) and [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html)\. For more information on contexts, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html) in the *AWS Key Management Service Developer Guide*\.
 
-  For more information about client\-provided keys, see [Protecting Data Using Server\-Side Encryption with Customer\-Provided Encryption Keys](http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html) in the *Amazon Simple Storage Service Developer Guide*\.
+  For more information about client\-provided keys, see [Protecting Data Using Server\-Side Encryption with Customer\-Provided Encryption Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 For information about the settings required when decrypting and encrypting files using the Elastic Transcoder console, see [\(Optional\) Output Encryption](job-settings.md#job-encryption-settings)\. For information about the settings required when decrypting and encrypting files using the Elastic Transcoder API, see the [Create Job](create-job.md) API action beginning with the **Encryption** element\.
 
@@ -92,7 +92,7 @@ The following procedures show how to identify your existing resources or create 
 
 1. Take note of the ARN\.
 
-You can use the console to create an AWS KMS key, but you must use the encryption and decryption APIs to encrypt or decrypt data with an AWS KMS key\. For more information, see [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html)\.
+You can use the console to create an AWS KMS key, but you must use the encryption and decryption APIs to encrypt or decrypt data with an AWS KMS key\. For more information, see [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html)\.
 
 ### Connecting Elastic Transcoder and AWS KMS<a name="connecting-ets-and-kms"></a>
 

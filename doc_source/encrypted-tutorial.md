@@ -58,7 +58,7 @@ MTIzNDU2Nzg5MDEyMzQ1Ng==
 
 ## Step 2: Encrypt Your Input File<a name="step-2"></a>
 
-Now that you encoded the input key and initialization factor, encrypt your input file with the hexadecimal input key and initialization factor\. To encrypt your file, run the following command: 
+Now that you encoded the input key and initialization vector, encrypt your input file with the hexadecimal input key and initialization vector\. To encrypt your file, run the following command: 
 
 ```
 openssl enc -nosalt -aes-128-cbc -in "input.mp4" -out "encrypted.mp4" -K "6b65796b65796b65796b65796b65796b" -iv "31323334353637383930313233343536"

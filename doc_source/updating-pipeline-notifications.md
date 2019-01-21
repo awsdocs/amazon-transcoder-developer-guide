@@ -2,7 +2,7 @@
 
 When you create a pipeline, you can optionally configure Elastic Transcoder to send a message to an Amazon Simple Notification Service \(Amazon SNS\) topic when the status of a job changes, including when Elastic Transcoder starts or finishes processing a job, and when Elastic Transcoder encounters a warning or error condition while processing a job\. You can change whether you want Elastic Transcoder to send a message, and, if so, you can change which SNS topic to send the message to\. 
 
-Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service \(Amazon SQS\) queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/)\.
+Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service \(Amazon SQS\) queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/)\.
 
 The following procedure explains how to update notifications using the console\. For information about how to update notifications using the API, see [Update Pipeline Notifications](update-pipeline-notifications.md)\.
 

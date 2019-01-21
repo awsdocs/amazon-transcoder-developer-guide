@@ -15,7 +15,7 @@ Elastic Transcoder requires the following information in the header of an HTTP r
 
 **Host \(Required\)**  
 The Elastic Transcoder endpoint that specifies where your resources are created\. The value must be a named regional endpoint\. We recommend that you use the same endpoint for your Amazon S3 buckets and for your Elastic Transcoder pipelines and jobs\. If you use different endpoints, you'll incur additional charges for data transferred between the region that contains your Amazon S3 buckets and the region in which Elastic Transcoder does the encoding\. In addition, the time required for the data transfer will delay access to the transcoded file\.  
-For a list of supported Elastic Transcoder endpoints, go to the [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region) section in the *Amazon Web Services General Reference*\.  
+For a list of supported Elastic Transcoder endpoints, go to the [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region) section in the *Amazon Web Services General Reference*\.  
 For more information on cross\-regional fees, see Data Transfer Pricing in [Amazon S3 Pricing](http://aws.amazon.com/s3/pricing/)\.
 
 **x\-amz\-date or Date \(Required\)**  

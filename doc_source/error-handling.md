@@ -87,7 +87,7 @@ When Elastic Transcoder encounters an error while processing your job, it report
      "outputs": [
         {
            applicable job Outputs settings,
-           "status" : "Progressing|Completed|Warning|Error"
+           "status" : "Progressing|Complete|Warning|Error"
         },
         {...}
      ],

@@ -9,4 +9,4 @@ Elastic Transcoder also provides a management console\. You can use the console 
 
 ## Regions and Endpoints<a name="regions-endpoints"></a>
 
-You create pipelines in a specific AWS region\. You always send your Elastic Transcoder requests to a region\-specific endpoint\. For a list of supported AWS regions, go to the [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region) section in the *Amazon Web Services General Reference*\.
+You create pipelines in a specific AWS region\. You always send your Elastic Transcoder requests to a region\-specific endpoint\. For a list of supported AWS regions, go to the [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region) section in the *Amazon Web Services General Reference*\.

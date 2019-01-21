@@ -77,4 +77,4 @@
       + [Read Preset](get-preset.md)
       + [Delete Preset](delete-preset.md)
 + [Document History](history.md)
-+ [AWS Glossary](glossary.md)
++ [](glossary.md)

@@ -4,7 +4,7 @@ This section discusses how to control access to your Elastic Transcoder resource
 
 IAM access controls are for when you want to be able to control who has access to your files and who can affect resources such as pipelines and presets\. File encryption \(encryption at rest\) is for when you want a file to be stored in an encrypted state, and HLS and DRM are for when you want to be able to control who has the ability to playback your files\.
 
-For more information on security best practices, see the [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html) guide\.
+For more information on security best practices, see the [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html) guide\.
 
 **Topics**
 + [Controlling Access to Elastic Transcoder](access-control.md)

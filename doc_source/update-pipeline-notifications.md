@@ -34,7 +34,7 @@ Content-Length: number of characters in the JSON string
    "Notifications":{
       "[Progressing](#update-pipeline-notifications-request-notifications-progressing)":"SNS topic to notify when
          Elastic Transcoder has started to process the job",
-      "[Completed](#update-pipeline-notifications-request-notifications-completed)":"SNS topic to notify when
+      "[Complete](#update-pipeline-notifications-request-notifications-completed)":"SNS topic to notify when
          Elastic Transcoder has finished processing the job",
       "[Warning](#update-pipeline-notifications-request-notifications-warning)":"SNS topic to notify when
       	Elastic Transcoder returns a warning",
@@ -63,11 +63,11 @@ The JSON string in the request body contains the following objects\.
 The ID of the pipeline that you want to update\.
 
 **Notifications:Progressing**  
-The topic ARN for the Amazon Simple Notification Service \(Amazon SNS\) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline\. This is the ARN that Amazon SNS returned when you created the topic\. For more information, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.  
+The topic ARN for the Amazon Simple Notification Service \(Amazon SNS\) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline\. This is the ARN that Amazon SNS returned when you created the topic\. For more information, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.  
 To receive notifications, you must also subscribe to the new topic in the Amazon SNS console\.
-Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/)\.
+Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/)\.
 
-**Notifications:Completed**  
+**Notifications:Complete**  
 The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline\. This is the ARN that Amazon SNS returned when you created the topic\. 
 
 **Notifications:Warning**  
@@ -91,7 +91,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
       "Id":"ID for the new pipeline",
       "Notifications":{
          "Progressing":"SNS topic to notify when Elastic Transcoder has started to process the job",
-         "Completed":"SNS topic to notify when Elastic Transcoder has finished processing the job",
+         "Complete":"SNS topic to notify when Elastic Transcoder has finished processing the job",
          "Warning":"SNS topic to notify when Elastic Transcoder returns a warning",
          "Error":"SNS topic to notify when Elastic Transcoder returns an error"
       }
@@ -132,7 +132,7 @@ Content-Length: number of characters in the JSON string
    "Id":"1111111111111-abcde1",
    "Notifications":{
       "Progressing":"",
-      "Completed":"",
+      "Complete":"",
       "Warning":"",
       "Error":"arn:aws:sns:us-east-1:111222333444:ETS_Errors"
    }
@@ -152,7 +152,7 @@ Date: Mon, 14 Jan 2013 06:01:47 GMT
    "Id":"1111111111111-abcde1",
    "Notifications":{
       "Progressing":"",
-      "Completed":"",
+      "Complete":"",
       "Warning":"",
       "Error":"arn:aws:sns:us-east-1:111222333444:ETS_Errors"
    }

@@ -36,11 +36,11 @@ Use the settings in this section to specify the Amazon S3 bucket in which you wa
 The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists \(if applicable\) for jobs that you submit to this pipeline\.
 
  **Storage Class**  
-The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you want Elastic Transcoder to assign to the transcoded files and playlists that it stores in your Amazon S3 bucket\. For more information, see [Reduced Redundancy Storage](http://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#RRS) in the *Amazon Simple Storage Service Developer Guide*\.
+The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you want Elastic Transcoder to assign to the transcoded files and playlists that it stores in your Amazon S3 bucket\. For more information, see [Reduced Redundancy Storage](https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#RRS) in the *Amazon Simple Storage Service Developer Guide*\.
 
  **Grantee Type**  
 Specify how you want to identify the users or groups that you want to have access to transcoded files and playlists\. When you select a grantee type, the [Grantee Type](#pipeline-settings-transcoded-grantee-type) field appears:  
-+ **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
++ **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
 **Important**  
 A canonical user ID is not the same as an AWS account number\.
 + **Email:** The value of **Grantee** is the registered email address of an AWS account\.
@@ -66,11 +66,11 @@ Use the settings in this section to specify the Amazon S3 bucket in which you wa
 The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnails for jobs that you submit to this pipeline\.
 
  **Storage Class**  
-The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket\. For more information, see [Reduced Redundancy Storage](http://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#RRS) in the *Amazon Simple Storage Service Developer Guide*\.
+The Amazon S3 storage class, **Standard** or **Reduced Redundancy**, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket\. For more information, see [Reduced Redundancy Storage](https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#RRS) in the *Amazon Simple Storage Service Developer Guide*\.
 
  **Grantee Type**  
 Specify how you want to identify the users or groups that you want to have access to thumbnails\. When you select a grantee type, the [Grantee Type](#pipeline-settings-thumbnail-grantee-type) field appears:  
-+ **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
++ **Canonical:** The value of **Grantee** is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution\. For more information about canonical user IDs, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) in the *Amazon CloudFront Developer Guide*\.
 **Important**  
 A canonical user ID is not the same as an AWS account number\.
 + **Email:** The value of **Grantee** is the registered email address of an AWS account\.
@@ -95,9 +95,9 @@ Use the settings in this section to configure Elastic Transcoder to notify you w
  **On Progressing Event**  
 The Amazon Simple Notification Service \(Amazon SNS\) topic that you want to notify when Elastic Transcoder has started to process the job\.  
 To receive notifications, you must also subscribe to the new topic in the Amazon SNS console\.
-Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service \(Amazon SQS\) queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/)\.
+Amazon SNS offers a variety of notification options, including the ability to send Amazon SNS messages to Amazon Simple Queue Service \(Amazon SQS\) queues\. For more information, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/)\.
 
- **On Completed Event**  
+ **On Complete Event**  
 The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job\.
 
  **On Warning Event**  

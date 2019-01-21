@@ -2,7 +2,7 @@
 
 Amazon Elastic Transcoder integrates with Amazon S3 to store input and output files\. The 100\-bucket storage limit in Amazon S3 affects how you organize and manage your Elastic Transcoder files\.
 
-When you work with Amazon S3, we recommend that you mimic a [regular file system](http://aws.amazon.com/articles/1109#08)\. You can do this by using the OutputKeyPrefix in Elastic Transcoder to add file paths to your output file\. Mimicking a file system allows you to use the [prefix and delimiter parameters](http://docs.aws.amazon.com/AmazonS3/latest/dev/ListingKeysHierarchy.html) in the Amazon S3 API to find your files\.
+When you work with Amazon S3, we recommend that you mimic a [regular file system](http://aws.amazon.com/articles/1109#08)\. You can do this by using the OutputKeyPrefix in Elastic Transcoder to add file paths to your output file\. Mimicking a file system allows you to use the [prefix and delimiter parameters](https://docs.aws.amazon.com/AmazonS3/latest/dev/ListingKeysHierarchy.html) in the Amazon S3 API to find your files\.
 
 For example, suppose you are creating a user\-generated content \(UGC\) site that takes in videos for many customers and transcodes them for use on several common devices\. To store the videos, you could organize your input and output buckets like this:
 
@@ -58,4 +58,4 @@ We recommend that you end your OutputKeyPrefix with a '/' so that the last part 
 We also recommend that you keep your input media in a single bucket per region, and that you keep transcoded media and thumbnails in a separate bucket in the same region\. This approach helps you avoid cross\-region transfer fees between your Amazon S3 bucket and Elastic Transcoder\.
 
 **Note**  
-If you expect to have more than a hundred requests per second accessing your Amazon S3 buckets, we recommend you follow [Amazon S3 performance considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html) when designing your system\.
+If you expect to have more than a hundred requests per second accessing your Amazon S3 buckets, we recommend you follow [Amazon S3 performance considerations](https://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html) when designing your system\.

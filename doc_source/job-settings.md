@@ -51,7 +51,7 @@ The specific encryption mode that you want Elastic Transcoder to use when decryp
 Elastic Transcoder supports the following options:  
 + **Amazon S3 Server\-Side Encryption:** Amazon S3 handles the encryption and decryption of your files\. As long as Elastic Transcoder has access permissions to your Amazon S3 bucket, you don't need to take any action\.
 
-  For more information, see [Protecting Data Using Server\-Side Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
+  For more information, see [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
 + **Client\-Side Encryption Using Customer\-Provided Keys:** Elastic Transcoder supports three types of encryption using customer\-provided keys:
   + **aes\-cbc\-pkcs7:** A padded cipher\-block mode of operation\.
   + **aes\-ctr:** AES Counter Mode\.
@@ -65,7 +65,7 @@ Elastic Transcoder supports the following options:
  **Decryption Key \(Required for AES Decryption\)**  
 The data encryption key used to encrypt your file\. The key must be base64\-encoded and it must be one of the following bit lengths before being base64\-encoded:  
 `96` \(AES\-GCM only\), `128`, `192`, or `256`\.   
-The key must also be encrypted by using AWS KMS\. For more information, see [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
+The key must also be encrypted by using AWS KMS\. For more information, see [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
 
  **Decryption Key MD5 \(Required for AES Decryption\)**  
 The MD5 digest of the key used to encrypt your input file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit\. The key MD5 must be base64\-encoded, and it must be exactly 16 bytes before being base64\-encoded\.
@@ -215,10 +215,10 @@ The encryption settings, if any, that you want Elastic Transcoder to apply to yo
 The specific encryption mode that you want Elastic Transcoder to use when encrypting your output files individually\. Elastic Transcoder supports the following **Encryption Mode** options:  
 + **s3:** Amazon S3 creates and manages the keys used for encrypting your files\.
 
-  For more information, see [Protecting Data Using Server\-Side Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
+  For more information, see [Protecting Data Using Server\-Side Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
 + **s3\-aws\-kms:** Amazon S3 calls AWS KMS, which creates and manages the keys that are used for encrypting your files\. If you specify **s3\-aws\-kms** and you don't want to use the default key, you must add the AWS\-KMS key that you want to use to your pipeline\.
 
-  For more information, see [Protecting Data Using Server\-Side Encryption with AWS KMS\-Managed Keys ](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
+  For more information, see [Protecting Data Using Server\-Side Encryption with AWS KMS\-Managed Keys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
 + **aes\-cbc\-pkcs7:** A padded cipher\-block mode of operation\.
 + **aes\-ctr:** AES Counter Mode\.
 + **aes\-gcm:** AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning that a file, key, or initialization vector that has been tampered with will fail the decryption process\.
@@ -234,7 +234,7 @@ If you want Elastic Transcoder to generate a key for you, leave this field blank
 If you choose to supply your own key, you must encrypt the key by using AWS KMS\. The key must be base64\-encoded, and it must be one of the following bit lengths before being base64\-encoded:  
 `96` \(AES\-GCM only\), `128`, `192`, or `256`\.   
 If you configured Elastic Transcoder to generate a key for you, Elastic Transcoder leaves this field blank in the **Create Job** response\. To retrieve your generated data encryption key, submit a **Read Job** request\.  
-For more information about encrypting your key with AWS KMS, see [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
+For more information about encrypting your key with AWS KMS, see [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
 
  **\(Required if an Encryption Key is supplied\) Encryption Key MD5**  
 The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit\. The key MD5 must be base64\-encoded, and it must be exactly 16 bytes before being base64\-encoded\.  
@@ -377,7 +377,7 @@ If you want Elastic Transcoder to generate a key for you, leave this field blank
 If you choose to supply your own key, you must encrypt the key by using AWS KMS\. The key must be base64\-encoded, and it must be one of the following bit lengths before being base64\-encoded:  
 `96` \(AES\-GCM only\), `128`, `192`, or `256`\.   
 If you configured Elastic Transcoder to generate a key for you, Elastic Transcoder leaves this field blank in the `CreateJob` response\. To retrieve your generated data encryption key, submit a `ReadJob` request\.  
-For more information about encrypting your key with AWS KMS, see [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.  
+For more information about encrypting your key with AWS KMS, see [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.  
 If you choose an HLS content protection method of `aes-128`, the key must be `128` bits\. If you have a `relative` **KeyStoragePolicy** set, Elastic Transcoder writes your key to an Amazon S3 bucket with Amazon S3 server\-side encryption\.
 
 ** Key MD5 \(Required if an Encryption Key is supplied\)**  
@@ -423,7 +423,7 @@ For playlists of type **Smooth**, specify `microsoft`\. For playlists of type **
  **\(Required for DRM protection\) DRM Key**  
 The DRM key for your file, provided by your DRM license provider\. The key must be base64\-encoded, and it must be one of the following bit lengths before being base64\-encoded:  
 `128`, `192`, or `256`\.   
-The key must also be encrypted by using AWS KMS\. For more information, see [Encrypting and Decrypting Data](http://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
+The key must also be encrypted by using AWS KMS\. For more information, see [Encrypting and Decrypting Data](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html) in the *AWS Key Management Service Developer Guide*\.
 
  **\(Required for DRM protection\) DRM Key Id**  
 The ID for your DRM key, so that your DRM license provider knows which key to provide\.  
